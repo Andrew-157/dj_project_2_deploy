@@ -25,11 +25,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', include('personal.urls')),
     path('', include('public.urls')),
-    path("__debug__/", include("debug_toolbar.urls"))
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
 
 
 handler403 = 'core.views.error_403_handler'
