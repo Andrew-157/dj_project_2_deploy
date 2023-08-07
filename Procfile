@@ -1,1 +1,2 @@
-web: python manage.py migrate && gunicorn articlee.wsgi
+release: python manage.py migrate 
+web: gunicorn articlee.wsgi
