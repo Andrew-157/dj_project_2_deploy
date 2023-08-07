@@ -175,9 +175,9 @@ TAGGIT_CASE_INSENSITIVE = True
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': env("CLOUD_NAME"),
-    'API_KEY': env("API_KEY"),
-    'API_SECRET': env("API_SECRET")
+    'CLOUD_NAME': 'dnjth5zxu',
+    'API_KEY': '947648394328949',
+    'API_SECRET': 'nSMf_t4VB1g_izVZz_JcpbEZEns'
 }
 
 MEDIA_URL = '/media/'
