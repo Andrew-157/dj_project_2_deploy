@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+django = "*"
 django-crispy-forms = "*"
 django-cleanup = "*"
 crispy-bootstrap4 = "*"
@@ -11,12 +12,7 @@ django-taggit = "*"
 pillow = "*"
 mysqlclient = "*"
 django-environ = "*"
-gunicorn = "*"
-whitenoise = "*"
-cloudinary = "*"
-django-cloudinary-storage = "*"
-django-heroku = "*"
-django = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
 autopep8 = "*"
