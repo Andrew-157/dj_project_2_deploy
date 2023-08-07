@@ -14,6 +14,8 @@ mysqlclient = "*"
 django-environ = "*"
 cloudinary = "*"
 django-cloudinary-storage = "*"
+dj-database-url = "*"
+gunicorn = "*"
 
 [dev-packages]
 autopep8 = "*"

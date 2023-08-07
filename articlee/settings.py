@@ -15,6 +15,7 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 from django.urls import reverse_lazy
 import environ
+import dj_database_url
 
 env = environ.Env()
 environ.Env.read_env()
@@ -169,3 +170,6 @@ CLOUDINARY_STORAGE = {
     'API_KEY': os.environ.get("API_KEY"),
     'API_SECRET': os.environ.get("API_SECRET"),
 }
+
+dj_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(dj_from_env)
