@@ -13,6 +13,8 @@ pillow = "*"
 mysqlclient = "*"
 django-environ = "*"
 django-debug-toolbar = "*"
+cloudinary = "*"
+django-cloudinary-storage = "*"
 
 [dev-packages]
 autopep8 = "*"

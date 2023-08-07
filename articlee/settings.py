@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -52,7 +52,9 @@ INSTALLED_APPS = [
     'users',
     'personal',
     'public',
-    'debug_toolbar'
+    'debug_toolbar',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -95,11 +97,11 @@ WSGI_APPLICATION = 'articlee.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env("DB_NAME"),
-        'HOST': env("DB_HOST"),
-        'USER': env("DB_USER"),
-        'PASSWORD': env("DB_PASSWORD"),
-        'PORT': env("DB_PORT")
+        'NAME': os.environ.get("DB_NAME"),
+        'HOST': os.environ.get("DB_HOST"),
+        'USER': os.environ.get("DB_USER"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),
+        'PORT': os.environ.get("DB_PORT")
     }
 }
 
@@ -148,7 +150,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-secondary',
@@ -167,3 +170,9 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get("CLOUD_NAME"),
+    'API_KEY': os.environ.get("API_KEY"),
+    'API_SECRET': os.environ.get("API_SECRET"),
+}
