@@ -175,7 +175,4 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ.get("API_SECRET"),
 }
 
-dj_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(dj_from_env)
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
