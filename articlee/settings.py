@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = 'd7a7bd3c79719d6951fe6ad7cf59061b97c399290c4867bac35b328ba270c2ed'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -101,11 +101,11 @@ WSGI_APPLICATION = 'articlee.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env("DB_NAME"),
-        'HOST': env("DB_HOST"),
-        'USER': env("DB_USER"),
-        'PASSWORD': env("DB_PASSWORD"),
-        'PORT': env("DB_PORT")
+        'NAME': 'mstom67sier12rq9',
+        'HOST': 'spryrr1myu6oalwl.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
+        'USER': 'sc7n0lmbob53y008',
+        'PASSWORD': 'iv00vbyu5illzgnq',
+        'PORT': 3306
     }
 }
 
@@ -183,6 +183,3 @@ CLOUDINARY_STORAGE = {
 MEDIA_URL = '/media/'
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-
-django_heroku.settings(locals())
