@@ -15,6 +15,7 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 from django.urls import reverse_lazy
 import environ
+import django_heroku
 
 env = environ.Env()
 environ.Env.read_env()
@@ -182,3 +183,6 @@ CLOUDINARY_STORAGE = {
 MEDIA_URL = '/media/'
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+django_heroku.settings(locals())
