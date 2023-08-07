@@ -13,10 +13,10 @@ pillow = "*"
 mysqlclient = "*"
 django-environ = "*"
 gunicorn = "*"
-django-heroku = "*"
 whitenoise = "*"
 cloudinary = "*"
 django-cloudinary-storage = "*"
+django-heroku = "*"
 
 [dev-packages]
 autopep8 = "*"
