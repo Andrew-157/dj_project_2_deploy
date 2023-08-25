@@ -65,19 +65,15 @@ class ArticlesListView(ListView):
 
 
 class ArticleDetailView(DetailView):
-    model = Article
+    queryset = Article.objects.select_related('author').all()
     template_name = 'personal/article_detail.html'
     context_object_name = 'article'
 
-    def get_object(self):
-        article_pk = self.kwargs['pk']
-        article = Article.objects.\
-            filter(pk=article_pk).first()
-        if not article:
-            raise Http404
-        elif article.author != self.request.user:
+    def get(self, request, *args, **kwargs):
+        article: Article = self.get_object()
+        if article.author.id != request.user.id:
             raise PermissionDenied
-        return super().get_object()
+        return super().get(request, *args, **kwargs)
 
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
